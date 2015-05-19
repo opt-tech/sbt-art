@@ -1,6 +1,7 @@
 package jp.demandsidescience.sbtart
 
 import sbt.{File, Process, ProcessBuilder, Logger, ProcessLogger}
+import scala.util.Try
 
 
 case class ArtifactCli(prefix: List[String] = List("art"))(implicit val log: Logger) {
@@ -40,7 +41,7 @@ case class ArtifactCli(prefix: List[String] = List("art"))(implicit val log: Log
   }
 
   private def withExitCodeVerified(thunk: => Int)(whenFailed: Int => Unit): Unit = {
-    val ret = thunk
+    val ret = Try(thunk).getOrElse(127)
     if (ret != 0) whenFailed(ret)
   }
 

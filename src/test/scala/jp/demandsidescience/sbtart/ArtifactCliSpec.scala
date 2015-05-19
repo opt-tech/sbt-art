@@ -17,7 +17,8 @@ class ArtifactCliTest(commandInstalled: Boolean,
 
     val args = command.toString.drop(1).dropRight(1).split(", ").toList
     args match {
-      case "art" :: _ if !commandInstalled => 127
+      case "art" :: _ if !commandInstalled =>
+        throw new java.io.IOException("Cannot run program \"art\": error=2, No such file or directory")
       case "art" :: "--version" :: Nil => 0
       case "art" :: "--config" :: _ :: "list" :: _ :: Nil => exitCode
       case "art" :: "--config" :: _ :: "info" :: _ :: _ :: _ :: Nil => exitCode
