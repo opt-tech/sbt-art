@@ -22,7 +22,7 @@ pip install artifact-cli
 - project/plugins.sbt
 
 ```
-addSbtPlugin("jp.demandsidescience" % "sbt-art" % "0.1.0")
+addSbtPlugin("jp.demand-side-science" % "sbt-art" % "0.1.0")
 ```
 
 ### 3. Write AWS configuration
