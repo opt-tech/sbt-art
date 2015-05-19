@@ -47,16 +47,12 @@ case class ArtifactCli(prefix: List[String] = List("art"))(implicit val log: Log
 
   private def withInstallVerified(thunk: => Unit): Unit = {
     withExitCodeVerified(runSystemCommand(Process("art --version"), output = false)) { _ =>
-      log.error(Seq(
-        "",
-        "'artifact-cli' is not installed properly in your computer.",
-        "To use this plugin, please run the following command ('Python' and 'pip' are required):",
-        "",
-        "    pip install artifact-cli",
-        "",
-        ""
-      ).mkString("\n"))
-
+      log.error("")
+      log.error("'artifact-cli' is not installed properly in your computer.")
+      log.error("To use this plugin, please run the following command ('Python' and 'pip' are required):")
+      log.error("")
+      log.error("    pip install artifact-cli")
+      log.error("")
       throw new NotInstalledError
     }
     thunk
