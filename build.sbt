@@ -9,7 +9,6 @@ lazy val publishSettings: Seq[Setting[_]] = Seq(
   sonatypeProfileName := "jp.demand-side-science",
   homepage := Some(url("https://github.com/demand-side-science/sbt-art")),
   licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-  useGpg := false,
   publishMavenStyle := true,
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
