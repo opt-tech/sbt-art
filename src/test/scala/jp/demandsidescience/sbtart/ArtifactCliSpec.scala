@@ -66,15 +66,13 @@ class ArtifactCliSpec extends FlatSpec with MustMatchers with Inside {
   it should "throw exception when artifact-cli is not installed" in new context(false) {
     val t = the[NotInstalledError] thrownBy art.version()
     t.getMessage mustBe "Not installed artifact-cli."
-    log.logHistory mustBe List(sbt.Level.Error -> Seq(
+    log.logHistory mustBe Seq(
       "",
       "'artifact-cli' is not installed properly in your computer.",
       "To use this plugin, please run the following command ('Python' and 'pip' are required):",
       "",
       "    pip install artifact-cli",
-      "",
-      ""
-    ).mkString("\n"))
+      "").map(sbt.Level.Error -> _)
   }
 
   "ArtifactCli#list" should "execute art command" in new context() {

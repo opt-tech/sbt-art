@@ -4,6 +4,7 @@
 Runs [artifact-cli](https://github.com/mogproject/artifact-cli) inside sbt, manages all-in-one jar/zip artifacts in S3.
 
 [![Stories in Ready](https://badge.waffle.io/demand-side-science/sbt-art.png?label=ready&title=Ready)](https://waffle.io/demand-side-science/sbt-art)
+[![Build Status](https://travis-ci.org/demand-side-science/sbt-art.svg?branch=master)](https://travis-ci.org/demand-side-science/sbt-art)
 [![License](https://img.shields.io/badge/license-Apache2-blue.svg)](http://choosealicense.com/licenses/apache-2.0/)
 
 
@@ -22,7 +23,7 @@ pip install artifact-cli
 - project/plugins.sbt
 
 ```
-addSbtPlugin("jp.demand-side-science" % "sbt-art" % "0.1.1")
+addSbtPlugin("jp.demand-side-science" % "sbt-art" % "0.1.2")
 ```
 
 ### 3. Write AWS configuration
