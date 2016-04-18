@@ -1,13 +1,13 @@
 lazy val commonSettings: Seq[Setting[_]] = Seq(
   version := "0.1.2",
-  organization := "jp.demand-side-science",
-  organizationName := "Demand Side Science Inc.",
+  organization := "jp.ne.opt",
+  organizationName := "Opt, Inc.",
   startYear := Some(2015)
 )
 
 lazy val publishSettings: Seq[Setting[_]] = Seq(
-  sonatypeProfileName := "jp.demand-side-science",
-  homepage := Some(url("https://github.com/demand-side-science/sbt-art")),
+  sonatypeProfileName := "jp.ne.opt",
+  homepage := Some(url("https://github.com/opt-tech/sbt-art")),
   licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
   useGpg := true,
   publishMavenStyle := true,
@@ -22,14 +22,14 @@ lazy val publishSettings: Seq[Setting[_]] = Seq(
   pomIncludeRepository := { _ => false},
   pomExtra := (
     <scm>
-      <url>github.com:demand-side-science/sbt-art.git</url>
-      <connection>scm:git:git@github.com:demand-side-science/sbt-art.git</connection>
+      <url>github.com:opt-tech/sbt-art.git</url>
+      <connection>scm:git:git@github.com:opt-tech/sbt-art.git</connection>
     </scm>
       <developers>
         <developer>
-          <id>mogproject</id>
-          <name>Yosuke Mizutani</name>
-          <url>http://demand-side-science.jp</url>
+          <id>arcizan</id>
+          <name>arcizan</name>
+          <url>https://www.opt.ne.jp/opttechnologies/</url>
         </developer>
       </developers>)
 )
