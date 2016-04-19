@@ -3,8 +3,8 @@
 
 Runs [artifact-cli](https://github.com/mogproject/artifact-cli) inside sbt, manages all-in-one jar/zip artifacts in S3.
 
-[![Stories in Ready](https://badge.waffle.io/demand-side-science/sbt-art.png?label=ready&title=Ready)](https://waffle.io/demand-side-science/sbt-art)
-[![Build Status](https://travis-ci.org/demand-side-science/sbt-art.svg?branch=master)](https://travis-ci.org/demand-side-science/sbt-art)
+[![Stories in Ready](https://badge.waffle.io/opt-tech/sbt-art.png?label=ready&title=Ready)](https://waffle.io/opt-tech/sbt-art)
+[![Circle CI](https://circleci.com/gh/opt-tech/sbt-art.svg?style=shield)](https://circleci.com/gh/opt-tech/sbt-art)
 [![License](https://img.shields.io/badge/license-Apache2-blue.svg)](http://choosealicense.com/licenses/apache-2.0/)
 
 
@@ -23,7 +23,7 @@ pip install artifact-cli
 - project/plugins.sbt
 
 ```
-addSbtPlugin("jp.demand-side-science" % "sbt-art" % "0.1.2")
+addSbtPlugin("jp.ne.opt" % "sbt-art" % "0.1.2")
 ```
 
 ### 3. Write AWS configuration
@@ -43,7 +43,7 @@ region = your-region (e.g. ap-northeast-1, us-east-1)
 First, import keys in your ```build.sbt``` or ```project/Build.scala```.
 
 ```
-import jp.demandsidescience.sbtart.SbtArtPlugin.autoImport._
+import jp.ne.opt.sbtart.SbtArtPlugin.autoImport._
 ```
 
 #### 4.1 artGroupId

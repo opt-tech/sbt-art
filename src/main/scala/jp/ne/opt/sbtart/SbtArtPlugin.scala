@@ -1,4 +1,4 @@
-package jp.demandsidescience.sbtart
+package jp.ne.opt.sbtart
 
 import sbt._
 
