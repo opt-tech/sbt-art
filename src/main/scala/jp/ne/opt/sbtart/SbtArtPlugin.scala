@@ -33,7 +33,10 @@ object SbtArtPlugin extends sbt.AutoPlugin {
     artInfo <<= SbtArt.infoTask(art),
     artUpload := SbtArt.uploadTask(art).value,
 
-    artConfig := new File("project/artifact-cli.conf"),
+    artConfig := {
+      val f = new File(sys.env.get("HOME").map(_ + "/.artifact-cli.conf").getOrElse(""))
+      if (f.exists) f else new File("project/artifact-cli.conf")
+    },
     artGroupId := Keys.organization.value,
     artTarget := new File("")
   )

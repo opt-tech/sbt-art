@@ -1,5 +1,5 @@
 lazy val commonSettings: Seq[Setting[_]] = Seq(
-  version := "0.1.2",
+  version := "0.1.3",
   organization := "jp.ne.opt",
   organizationName := "Opt, Inc.",
   startYear := Some(2015)

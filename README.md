@@ -23,12 +23,14 @@ pip install artifact-cli
 - project/plugins.sbt
 
 ```
-addSbtPlugin("jp.ne.opt" % "sbt-art" % "0.1.2")
+addSbtPlugin("jp.ne.opt" % "sbt-art" % "0.1.3")
 ```
 
 ### 3. Write AWS configuration
 
-- project/artifact-cli.conf
+- ~/.artifact-cli.conf (prior) or project/artifact-cli.conf
+
+Load ~/.artifact-cli.conf if it exists, otherwise load project/artifact-cli.conf.
 
 ```
 [default]
@@ -80,10 +82,16 @@ artTarget in art := (packageBin in Universal).value
 
 #### 4.3 artConfig (optional)
 
-Path to the configuration file for artifact-cli is also customizable. Default is ```project/artifact-cli.conf```.
+Path to the configuration file for artifact-cli is also customizable. Default is ```~/.artifact-cli.conf``` or ```project/artifact-cli.conf```.
 
 ```
 artConfig in art := new File("path/to/your.conf")
+```
+
+Use environment variable to specify configuration file.
+
+```
+artConfig in art := sys.env.get("VARNAME").map(new File(_)).getOrElse((artConfig in art).value)
 ```
 
 ## Tasks
