@@ -30,7 +30,7 @@ object SbtArtPlugin extends sbt.AutoPlugin {
   lazy val baseArtProjectSettings: Seq[Def.Setting[_]] = Seq(
     artVersion := SbtArt.versionTask(art).value,
     artList := SbtArt.listTask(art).value,
-    artInfo <<= SbtArt.infoTask(art),
+    artInfo := SbtArt.infoTask(art).evaluated,
     artUpload := SbtArt.uploadTask(art).value,
 
     artConfig := {

@@ -1,6 +1,8 @@
 package jp.ne.opt.sbtart
 
-import sbt.{File, Process, ProcessBuilder, Logger, ProcessLogger}
+import sbt.{File, Logger}
+
+import scala.sys.process.{Process, ProcessBuilder, ProcessLogger}
 import scala.util.Try
 
 
@@ -59,9 +61,9 @@ case class ArtifactCli(prefix: List[String] = List("art"))(implicit val log: Log
   }
 
   private object NullLogger extends ProcessLogger {
-    override def info(s: => String): Unit = {}
+    def out(s: => String): Unit = {}
 
-    override def error(s: => String): Unit = {}
+    def err(s: => String): Unit = {}
 
     override def buffer[T](f: => T): T = f
   }

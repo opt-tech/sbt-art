@@ -1,9 +1,10 @@
 package jp.ne.opt.sbtart
 
+import org.scalatest.{FlatSpec, Inside, MustMatchers}
 import sbt.File
 
-import org.scalatest.{Inside, FlatSpec, MustMatchers}
 import scala.collection.mutable
+import scala.sys.process.ProcessBuilder
 
 /** Mock system command executor */
 class ArtifactCliTest(commandInstalled: Boolean,
@@ -12,7 +13,7 @@ class ArtifactCliTest(commandInstalled: Boolean,
                       prefix: List[String] = List("art"))
                      (implicit log: sbt.Logger) extends ArtifactCli(prefix) {
 
-  override private[sbtart] def runSystemCommand(command: sbt.ProcessBuilder, output: Boolean): Int = {
+  override private[sbtart] def runSystemCommand(command: ProcessBuilder, output: Boolean): Int = {
     history += command.toString -> output
 
     val args = command.toString.drop(1).dropRight(1).split(", ").toList
