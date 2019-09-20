@@ -1,5 +1,8 @@
+enablePlugins(SbtPlugin)
+crossSbtVersions := Seq("0.13.18", "1.3.0")
+
 lazy val commonSettings: Seq[Setting[_]] = Seq(
-  version := "0.1.3",
+  version := "0.1.4",
   organization := "jp.ne.opt",
   organizationName := "Opt, Inc.",
   startYear := Some(2015)
@@ -9,7 +12,6 @@ lazy val publishSettings: Seq[Setting[_]] = Seq(
   sonatypeProfileName := "jp.ne.opt",
   homepage := Some(url("https://github.com/opt-tech/sbt-art")),
   licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-  useGpg := true,
   publishMavenStyle := true,
   publishTo := {
     val nexus = "https://oss.sonatype.org/"
@@ -38,9 +40,8 @@ lazy val root = (project in file("."))
   .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    sbtPlugin := true,
     name := "sbt-art",
     description := "artifact-cli plugin for sbt",
-    libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test",
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % "test",
     scalacOptions ++= Seq("-deprecation", "-unchecked")
   )
