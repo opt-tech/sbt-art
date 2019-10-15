@@ -3,7 +3,6 @@
 
 Runs [artifact-cli](https://github.com/mogproject/artifact-cli) inside sbt, manages all-in-one jar/zip artifacts in S3.
 
-[![Stories in Ready](https://badge.waffle.io/opt-tech/sbt-art.png?label=ready&title=Ready)](https://waffle.io/opt-tech/sbt-art)
 [![Travis CI](https://travis-ci.org/opt-tech/sbt-art.svg?branch=master)](https://travis-ci.org/opt-tech/sbt-art)
 [![License](https://img.shields.io/badge/license-Apache2-blue.svg)](http://choosealicense.com/licenses/apache-2.0/)
 
