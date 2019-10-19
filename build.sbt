@@ -1,5 +1,5 @@
 enablePlugins(SbtPlugin)
-crossSbtVersions := Seq("0.13.18", "1.3.0")
+crossSbtVersions := Seq("0.13.18", "1.3.3")
 
 lazy val commonSettings: Seq[Setting[_]] = Seq(
   version := "0.1.4",
